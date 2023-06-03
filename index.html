@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quer namorar comigo?</title>
+  <style>
+    body {
+      background-color: rgb(255, 0, 140);
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      padding-top: 200px;
+      font-family: Arial, sans-serif;
+    }
+
+    .option {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .heart {
+      background-image: url("Img/pngwing.com\ \(1\).png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="question">Quer namorar comigo?</div>
+  <div id="options">
+    <div class="option" onclick="moveOption(this)">Sim</div>
+    <div class="option" onclick="moveOption(this)">Não</div>
+  </div>
+  <div id="message" style="display: none;"></div>
+
+  <script>
+    function moveOption(option) {
+      if (option.innerText === 'Não') {
+        option.style.position = 'absolute';
+        option.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+        option.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+      } else if (option.innerText === 'Sim') {
+        document.getElementById('message').innerHTML = 'Que bom que você quer namorar comigo por livre e espontânea vontade.<div class="heart"></div>';
+        document.getElementById('message').style.display = 'block';
+        document.getElementById('options').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
