@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quer Namorar Comigo?</title>
+  <style>
+    #question {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      text-align: center;
+    }
+    #no {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+    }
+    #heart {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      text-align: center;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="question">
+    Quer namorar comigo?
+    <br>
+    <button onclick="showHeart()">Sim</button>
+    <button onclick="moveNo()">Não</button>
+  </div>
+  <div id="heart">
+    <span style="font-size: 48px; color: red;">&#x2764;</span>
+    <br><br>
+    Que bom que você quer namorar comigo por livre e espontânea vontade.<br>Beijos do Seu Marido (Gabriel Siebert)
+  </div>
+  <script>
+    function moveNo() {
+      var noElement = document.getElementById("no");
+      var randomX = Math.floor(Math.random() * window.innerWidth);
+      var randomY = Math.floor(Math.random() * window.innerHeight);
+      noElement.style.left = randomX + "px";
+      noElement.style.top = randomY + "px";
+    }
+
+    function showHeart() {
+      var questionElement = document.getElementById("question");
+      var heartElement = document.getElementById("heart");
+      questionElement.style.visibility = "hidden";
+      heartElement.style.visibility = "visible";
+    }
+  </script>
+</body>
+</html>
